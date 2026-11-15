@@ -1,0 +1,867 @@
+{
+ "ladder_holdout": {
+  "B0 logistic (8 fields)": {
+   "auc": 0.6097,
+   "gini": 0.2195,
+   "ks": 0.1688,
+   "pr_auc": 0.1151,
+   "brier": 0.07339,
+   "ece": 0.00311,
+   "default_rate": 0.0807,
+   "n": 61502
+  },
+  "B1 WoE scorecard": {
+   "auc": 0.7529,
+   "gini": 0.5059,
+   "ks": 0.3794,
+   "pr_auc": 0.2356,
+   "brier": 0.06817,
+   "ece": 0.00188,
+   "default_rate": 0.0807,
+   "n": 61502
+  },
+  "B2 WoE scorecard, best 50 of all features": {
+   "auc": 0.7644,
+   "gini": 0.5287,
+   "ks": 0.3982,
+   "pr_auc": 0.2516,
+   "brier": 0.06739,
+   "ece": 0.00211,
+   "default_rate": 0.0807,
+   "n": 61502
+  },
+  "M1 LightGBM, application only": {
+   "auc": 0.7699,
+   "gini": 0.5399,
+   "ks": 0.4014,
+   "pr_auc": 0.2561,
+   "brier": 0.06713,
+   "ece": 0.00148,
+   "default_rate": 0.0807,
+   "n": 61502
+  },
+  "M2x LightGBM, all tables, no external scores": {
+   "auc": 0.772,
+   "gini": 0.544,
+   "ks": 0.4115,
+   "pr_auc": 0.2554,
+   "brier": 0.06715,
+   "ece": 0.0038,
+   "default_rate": 0.0807,
+   "n": 61502
+  },
+  "M2 LightGBM, all tables": {
+   "auc": 0.795,
+   "gini": 0.59,
+   "ks": 0.4443,
+   "pr_auc": 0.2929,
+   "brier": 0.06526,
+   "ece": 0.00303,
+   "default_rate": 0.0807,
+   "n": 61502
+  }
+ },
+ "ladder_cv": {
+  "B0 logistic (8 fields)": {
+   "auc": 0.6083,
+   "gini": 0.2166,
+   "ks": 0.1642,
+   "pr_auc": 0.1137,
+   "brier": 0.07341,
+   "ece": 0.00248,
+   "default_rate": 0.0807,
+   "n": 246009
+  },
+  "B1 WoE scorecard": {
+   "auc": 0.7483,
+   "gini": 0.4966,
+   "ks": 0.3717,
+   "pr_auc": 0.2288,
+   "brier": 0.0685,
+   "ece": 0.0024,
+   "default_rate": 0.0807,
+   "n": 246009
+  },
+  "B2 WoE scorecard, best 50 of all features": {
+   "auc": 0.7598,
+   "gini": 0.5197,
+   "ks": 0.3897,
+   "pr_auc": 0.2428,
+   "brier": 0.06781,
+   "ece": 0.00245,
+   "default_rate": 0.0807,
+   "n": 246009
+  },
+  "M1 LightGBM, application only": {
+   "auc": 0.7642,
+   "gini": 0.5285,
+   "ks": 0.3943,
+   "pr_auc": 0.2473,
+   "brier": 0.06757,
+   "ece": 0.00232,
+   "default_rate": 0.0807,
+   "n": 246009
+  },
+  "M2x LightGBM, all tables, no external scores": {
+   "auc": 0.7648,
+   "gini": 0.5297,
+   "ks": 0.3947,
+   "pr_auc": 0.2485,
+   "brier": 0.06755,
+   "ece": 0.0042,
+   "default_rate": 0.0807,
+   "n": 246009
+  },
+  "M2 LightGBM, all tables": {
+   "auc": 0.7885,
+   "gini": 0.5771,
+   "ks": 0.4372,
+   "pr_auc": 0.2796,
+   "brier": 0.06591,
+   "ece": 0.00332,
+   "default_rate": 0.0807,
+   "n": 246009
+  }
+ },
+ "calibration": {
+  "m2_raw": {
+   "auc": 0.795,
+   "gini": 0.59,
+   "ks": 0.4443,
+   "pr_auc": 0.2929,
+   "brier": 0.06526,
+   "ece": 0.00303,
+   "default_rate": 0.0807,
+   "n": 61502
+  },
+  "m2_calibrated": {
+   "auc": 0.7949,
+   "gini": 0.5898,
+   "ks": 0.4434,
+   "pr_auc": 0.2874,
+   "brier": 0.06528,
+   "ece": 0.00229,
+   "default_rate": 0.0807,
+   "n": 61502
+  }
+ },
+ "stability": {
+  "psi_dev_vs_holdout": 0.0002,
+  "psi_dev_vs_new_applicants": 0.0089
+ },
+ "cutoffs": {
+  "approve": 0.0897018291155099,
+  "decline": 0.1551441293648933
+ },
+ "bands": [
+  {
+   "band": "APPROVE",
+   "size": 43275,
+   "mean": 0.03396880415944541
+  },
+  {
+   "band": "REVIEW",
+   "size": 10171,
+   "mean": 0.1221118867368007
+  },
+  {
+   "band": "DECLINE",
+   "size": 8056,
+   "mean": 0.27966732869910627
+  }
+ ],
+ "grades": [
+  {
+   "grade": "A",
+   "n": 18279,
+   "observed": 0.013895727337381696,
+   "predicted": 0.014851483082019576
+  },
+  {
+   "grade": "B",
+   "n": 13798,
+   "observed": 0.03486012465574721,
+   "predicted": 0.03577401864881496
+  },
+  {
+   "grade": "C",
+   "n": 9413,
+   "observed": 0.06469775841920748,
+   "predicted": 0.06288822281386407
+  },
+  {
+   "grade": "D",
+   "n": 7419,
+   "observed": 0.09300444803881924,
+   "predicted": 0.10075875889102306
+  },
+  {
+   "grade": "E",
+   "n": 12593,
+   "observed": 0.2327483522591916,
+   "predicted": 0.22870093933389715
+  }
+ ],
+ "dti": [
+  {
+   "band": "<=45%",
+   "size": 53088,
+   "mean": 0.07785186859553948
+  },
+  {
+   "band": "45-70%",
+   "size": 6315,
+   "mean": 0.0943784639746635
+  },
+  {
+   "band": ">70%",
+   "size": 2097,
+   "mean": 0.11254172627563186
+  }
+ ],
+ "business": [
+  {
+   "approval_rate": 0.5,
+   "bad_rate_base": 0.029885206985138694,
+   "bad_rate_new": 0.02182042860394784,
+   "bad_rate_change": -0.26985854189336234,
+   "loss_rate_base": 0.01356472653363311,
+   "loss_rate_new": 0.009817675731113903,
+   "loss_change": -0.3148757764528052,
+   "extra_approvals_same_bad_rate": 0.1361093948164287
+  },
+  {
+   "approval_rate": 0.55,
+   "bad_rate_base": 0.031721161236918344,
+   "bad_rate_new": 0.024300833678235677,
+   "bad_rate_change": -0.23392357875116487,
+   "loss_rate_base": 0.014357778710512232,
+   "loss_rate_new": 0.011137513071118125,
+   "loss_change": -0.2614968286119256,
+   "extra_approvals_same_bad_rate": 0.11758804591720595
+  },
+  {
+   "approval_rate": 0.6,
+   "bad_rate_base": 0.03479580499173464,
+   "bad_rate_new": 0.02707243706132625,
+   "bad_rate_change": -0.2219626168224299,
+   "loss_rate_base": 0.015647013820981468,
+   "loss_rate_new": 0.012171314248394328,
+   "loss_change": -0.25434781533668616,
+   "extra_approvals_same_bad_rate": 0.113131280283568
+  },
+  {
+   "approval_rate": 0.65,
+   "bad_rate_base": 0.037647588553131876,
+   "bad_rate_new": 0.030643386031618973,
+   "bad_rate_change": -0.18604651162790686,
+   "loss_rate_base": 0.016914617872918,
+   "loss_rate_new": 0.013537842754335987,
+   "loss_change": -0.2293770188428108,
+   "extra_approvals_same_bad_rate": 0.10155279503105585
+  },
+  {
+   "approval_rate": 0.7,
+   "bad_rate_base": 0.041183712341176744,
+   "bad_rate_new": 0.033797124340898,
+   "bad_rate_change": -0.17935702199661596,
+   "loss_rate_base": 0.018333695768907768,
+   "loss_rate_new": 0.014889433725897046,
+   "loss_change": -0.21129366928415028,
+   "extra_approvals_same_bad_rate": 0.09241325485350071
+  },
+  {
+   "approval_rate": 0.75,
+   "bad_rate_base": 0.044725317608290335,
+   "bad_rate_new": 0.03744092269002298,
+   "bad_rate_change": -0.1628696073679109,
+   "loss_rate_base": 0.019785269057214422,
+   "loss_rate_new": 0.01636728151709342,
+   "loss_change": -0.1917453683136383,
+   "extra_approvals_same_bad_rate": 0.07163181685148445
+  },
+  {
+   "approval_rate": 0.8,
+   "bad_rate_base": 0.04867787240096746,
+   "bad_rate_new": 0.04219426434422065,
+   "bad_rate_change": -0.13319415448851768,
+   "loss_rate_base": 0.021384920938028414,
+   "loss_rate_new": 0.018163008072608237,
+   "loss_change": -0.16556989928785582,
+   "extra_approvals_same_bad_rate": 0.05493154694156288
+  },
+  {
+   "approval_rate": 0.85,
+   "bad_rate_base": 0.054173999540898306,
+   "bad_rate_new": 0.048110031371948886,
+   "bad_rate_change": -0.11193502824858759,
+   "loss_rate_base": 0.023656087547148427,
+   "loss_rate_new": 0.020560922374648103,
+   "loss_change": -0.14322060853900176,
+   "extra_approvals_same_bad_rate": 0.04387336997170821
+  },
+  {
+   "approval_rate": 0.9,
+   "bad_rate_base": 0.060035049050604326,
+   "bad_rate_new": 0.0552654875250673,
+   "bad_rate_change": -0.07944628347878424,
+   "loss_rate_base": 0.02594878108254787,
+   "loss_rate_new": 0.02339817098754125,
+   "loss_change": -0.10784821892912178,
+   "extra_approvals_same_bad_rate": 0.028034860654937988
+  },
+  {
+   "approval_rate": 0.95,
+   "bad_rate_base": 0.06777804402149727,
+   "bad_rate_new": 0.06471433950638414,
+   "bad_rate_change": -0.04520202020202013,
+   "loss_rate_base": 0.02890420224803912,
+   "loss_rate_new": 0.027112311881431712,
+   "loss_change": -0.06767593014633622,
+   "extra_approvals_same_bad_rate": 0.013448343143312447
+  }
+ ],
+ "business_vs_b2": [
+  {
+   "approval_rate": 0.5,
+   "bad_rate_base": 0.027218627036519137,
+   "bad_rate_new": 0.02182042860394784,
+   "bad_rate_change": -0.19832735961768222,
+   "loss_rate_base": 0.012767101237840054,
+   "loss_rate_new": 0.009817675731113903,
+   "loss_change": -0.2828820763033191,
+   "extra_approvals_same_bad_rate": 0.10284218399401646
+  },
+  {
+   "approval_rate": 0.55,
+   "bad_rate_base": 0.02979956246674156,
+   "bad_rate_new": 0.024300833678235677,
+   "bad_rate_change": -0.18452380952380953,
+   "loss_rate_base": 0.013951285073535422,
+   "loss_rate_new": 0.011137513071118125,
+   "loss_change": -0.2474018202121977,
+   "extra_approvals_same_bad_rate": 0.08480862410978496
+  },
+  {
+   "approval_rate": 0.6,
+   "bad_rate_base": 0.0327362402102924,
+   "bad_rate_new": 0.02707243706132625,
+   "bad_rate_change": -0.17301324503311255,
+   "loss_rate_base": 0.015231535179902457,
+   "loss_rate_new": 0.012171314248394328,
+   "loss_change": -0.24049982756193578,
+   "extra_approvals_same_bad_rate": 0.07926246300933304
+  },
+  {
+   "approval_rate": 0.65,
+   "bad_rate_base": 0.035371222733640184,
+   "bad_rate_new": 0.030643386031618973,
+   "bad_rate_change": -0.13366336633663367,
+   "loss_rate_base": 0.01632630358527682,
+   "loss_rate_new": 0.013537842754335987,
+   "loss_change": -0.2070183337280096,
+   "extra_approvals_same_bad_rate": 0.06950505674612206
+  },
+  {
+   "approval_rate": 0.7,
+   "bad_rate_base": 0.03911639683166477,
+   "bad_rate_new": 0.033797124340898,
+   "bad_rate_change": -0.13598574821852738,
+   "loss_rate_base": 0.01800616869339949,
+   "loss_rate_new": 0.014889433725897046,
+   "loss_change": -0.20219564631793507,
+   "extra_approvals_same_bad_rate": 0.0668856297356184
+  },
+  {
+   "approval_rate": 0.75,
+   "bad_rate_base": 0.04296925811906517,
+   "bad_rate_new": 0.03744092269002298,
+   "bad_rate_change": -0.12865792129162468,
+   "loss_rate_base": 0.01951409828359448,
+   "loss_rate_new": 0.01636728151709342,
+   "loss_change": -0.18393643465941156,
+   "extra_approvals_same_bad_rate": 0.05550226008910275
+  },
+  {
+   "approval_rate": 0.8,
+   "bad_rate_base": 0.04707221397939066,
+   "bad_rate_new": 0.04219426434422065,
+   "bad_rate_change": -0.10362694300518127,
+   "loss_rate_base": 0.021003278016290185,
+   "loss_rate_new": 0.018163008072608237,
+   "loss_change": -0.15333628978268699,
+   "extra_approvals_same_bad_rate": 0.04046047283015186
+  },
+  {
+   "approval_rate": 0.85,
+   "bad_rate_base": 0.05205065421990971,
+   "bad_rate_new": 0.048110031371948886,
+   "bad_rate_change": -0.07570746049246602,
+   "loss_rate_base": 0.02286555213128445,
+   "loss_rate_new": 0.020560922374648103,
+   "loss_change": -0.11488096244222401,
+   "extra_approvals_same_bad_rate": 0.030036421579786032
+  },
+  {
+   "approval_rate": 0.9,
+   "bad_rate_base": 0.05844519520875865,
+   "bad_rate_new": 0.0552654875250673,
+   "bad_rate_change": -0.05440494590417311,
+   "loss_rate_base": 0.02534991590948965,
+   "loss_rate_new": 0.02339817098754125,
+   "loss_change": -0.08676540377432207,
+   "extra_approvals_same_bad_rate": 0.019514812526421843
+  },
+  {
+   "approval_rate": 0.95,
+   "bad_rate_base": 0.0667682196282477,
+   "bad_rate_new": 0.06471433950638414,
+   "bad_rate_change": -0.03076134324532176,
+   "loss_rate_base": 0.028638246209228408,
+   "loss_rate_new": 0.027112311881431712,
+   "loss_change": -0.0587550812919605,
+   "extra_approvals_same_bad_rate": 0.00910702090988913
+  }
+ ],
+ "policy": [
+  {
+   "decision": "APPROVE",
+   "size": 37890,
+   "mean": 0.03365003958828187,
+   "share": 0.6160775259341159
+  },
+  {
+   "decision": "CONDITIONAL",
+   "size": 13859,
+   "mean": 0.09603867522909301,
+   "share": 0.22534226529218562
+  },
+  {
+   "decision": "DECLINE",
+   "size": 9753,
+   "mean": 0.24187429508869066,
+   "share": 0.1585802087736984
+  }
+ ],
+ "gender_proxy_auc": 0.8961867371708625,
+ "fairness": {
+  "gender": {
+   "F": {
+    "approval": 0.8271540599563232,
+    "default_rate": 0.07030474488783006,
+    "n": 40296
+   },
+   "M": {
+    "approval": 0.7483731019522777,
+    "default_rate": 0.10053758370272564,
+    "n": 21206
+   }
+  },
+  "age": {
+   "<25": {
+    "approval": 0.5954135954135954,
+    "default_rate": 0.13226863226863228,
+    "n": 2442
+   },
+   "25-35": {
+    "approval": 0.7032377809857703,
+    "default_rate": 0.10586375197635252,
+    "n": 14547
+   },
+   "35-50": {
+    "approval": 0.8043688300777148,
+    "default_rate": 0.07989918084436043,
+    "n": 23805
+   },
+   "50+": {
+    "approval": 0.8870484836778056,
+    "default_rate": 0.05794861889124976,
+    "n": 20708
+   }
+  }
+ },
+ "top_features": [
+  {
+   "feature": "EXT_MEAN",
+   "mean_abs_shap": 0.2502
+  },
+  {
+   "feature": "EXT_MIN",
+   "mean_abs_shap": 0.1119
+  },
+  {
+   "feature": "PREV_DAYS_LAST_DUE_1ST_VERSION_MAX",
+   "mean_abs_shap": 0.1019
+  },
+  {
+   "feature": "BURO_DEBT_CREDIT_RATIO_MAX",
+   "mean_abs_shap": 0.0998
+  },
+  {
+   "feature": "EXT_MAX",
+   "mean_abs_shap": 0.0934
+  },
+  {
+   "feature": "AMT_ANNUITY",
+   "mean_abs_shap": 0.0827
+  },
+  {
+   "feature": "ORGANIZATION_TYPE",
+   "mean_abs_shap": 0.0814
+  },
+  {
+   "feature": "OCCUPATION_TYPE",
+   "mean_abs_shap": 0.0768
+  },
+  {
+   "feature": "CREDIT_MINUS_GOODS",
+   "mean_abs_shap": 0.0749
+  },
+  {
+   "feature": "NAME_EDUCATION_TYPE",
+   "mean_abs_shap": 0.0712
+  },
+  {
+   "feature": "DAYS_EMPLOYED",
+   "mean_abs_shap": 0.0669
+  },
+  {
+   "feature": "CREDIT_TERM",
+   "mean_abs_shap": 0.0601
+  },
+  {
+   "feature": "OWN_CAR_AGE",
+   "mean_abs_shap": 0.06
+  },
+  {
+   "feature": "NAME_FAMILY_STATUS",
+   "mean_abs_shap": 0.0587
+  },
+  {
+   "feature": "GOODS_CREDIT_RATIO",
+   "mean_abs_shap": 0.0568
+  },
+  {
+   "feature": "INST_AMT_PAYMENT_SUM",
+   "mean_abs_shap": 0.0541
+  },
+  {
+   "feature": "EXT_SOURCE_2",
+   "mean_abs_shap": 0.0531
+  },
+  {
+   "feature": "EXT_SOURCE_1",
+   "mean_abs_shap": 0.0513
+  },
+  {
+   "feature": "EXT_SOURCE_3",
+   "mean_abs_shap": 0.0481
+  },
+  {
+   "feature": "EXT_PROD",
+   "mean_abs_shap": 0.0476
+  }
+ ],
+ "driver_families": {
+  "Credit bureau scores": 0.6676,
+  "Past applications with this lender": 0.47,
+  "Loan amount and term": 0.3615,
+  "Employment": 0.282,
+  "Current debt at other lenders": 0.2797,
+  "Credit history length and activity (bureau)": 0.2133,
+  "Late or partial payments on past loans": 0.2111,
+  "Repayment history on past loans": 0.1995,
+  "Credit card use": 0.1472,
+  "Point-of-sale and cash loan history": 0.1241,
+  "Past point-of-sale installment loans": 0.0971,
+  "Previously refused applications": 0.093,
+  "Region": 0.0808,
+  "Owned car or property": 0.0747,
+  "Education": 0.0712,
+  "Family situation": 0.0604,
+  "Overdue loans at other lenders (credit bureau)": 0.0602,
+  "Payment burden relative to income": 0.0595,
+  "Age": 0.0578,
+  "How recently the ID document was issued": 0.0515,
+  "Contact details provided": 0.031,
+  "Documents provided": 0.0296,
+  "Recent change of phone number": 0.02,
+  "How recently the registration changed": 0.0177,
+  "Other application details": 0.0124
+ },
+ "meta": {
+  "features": 308,
+  "categories": {
+   "NAME_CONTRACT_TYPE": [
+    "Cash loans",
+    "Revolving loans"
+   ],
+   "FLAG_OWN_CAR": [
+    "N",
+    "Y"
+   ],
+   "FLAG_OWN_REALTY": [
+    "N",
+    "Y"
+   ],
+   "NAME_INCOME_TYPE": [
+    "Businessman",
+    "Commercial associate",
+    "Maternity leave",
+    "Pensioner",
+    "State servant",
+    "Student",
+    "Unemployed",
+    "Working"
+   ],
+   "NAME_EDUCATION_TYPE": [
+    "Academic degree",
+    "Higher education",
+    "Incomplete higher",
+    "Lower secondary",
+    "Secondary / secondary special"
+   ],
+   "NAME_FAMILY_STATUS": [
+    "Civil marriage",
+    "Married",
+    "Separated",
+    "Single / not married",
+    "Unknown",
+    "Widow"
+   ],
+   "NAME_HOUSING_TYPE": [
+    "Co-op apartment",
+    "House / apartment",
+    "Municipal apartment",
+    "Office apartment",
+    "Rented apartment",
+    "With parents"
+   ],
+   "OCCUPATION_TYPE": [
+    "Accountants",
+    "Cleaning staff",
+    "Cooking staff",
+    "Core staff",
+    "Drivers",
+    "HR staff",
+    "High skill tech staff",
+    "IT staff",
+    "Laborers",
+    "Low-skill Laborers",
+    "Managers",
+    "Medicine staff",
+    "Private service staff",
+    "Realty agents",
+    "Sales staff",
+    "Secretaries",
+    "Security staff",
+    "Waiters/barmen staff"
+   ],
+   "ORGANIZATION_TYPE": [
+    "Advertising",
+    "Agriculture",
+    "Bank",
+    "Business Entity Type 1",
+    "Business Entity Type 2",
+    "Business Entity Type 3",
+    "Cleaning",
+    "Construction",
+    "Culture",
+    "Electricity",
+    "Emergency",
+    "Government",
+    "Hotel",
+    "Housing",
+    "Industry: type 1",
+    "Industry: type 10",
+    "Industry: type 11",
+    "Industry: type 12",
+    "Industry: type 13",
+    "Industry: type 2",
+    "Industry: type 3",
+    "Industry: type 4",
+    "Industry: type 5",
+    "Industry: type 6",
+    "Industry: type 7",
+    "Industry: type 8",
+    "Industry: type 9",
+    "Insurance",
+    "Kindergarten",
+    "Legal Services",
+    "Medicine",
+    "Military",
+    "Mobile",
+    "Other",
+    "Police",
+    "Postal",
+    "Realtor",
+    "Religion",
+    "Restaurant",
+    "School",
+    "Security",
+    "Security Ministries",
+    "Self-employed",
+    "Services",
+    "Telecom",
+    "Trade: type 1",
+    "Trade: type 2",
+    "Trade: type 3",
+    "Trade: type 4",
+    "Trade: type 5",
+    "Trade: type 6",
+    "Trade: type 7",
+    "Transport: type 1",
+    "Transport: type 2",
+    "Transport: type 3",
+    "Transport: type 4",
+    "University",
+    "XNA"
+   ]
+  },
+  "cutoffs": {
+   "approve": 0.0897018291155099,
+   "decline": 0.1551441293648933
+  },
+  "profile_app_columns": [
+   "SK_ID_CURR",
+   "NAME_CONTRACT_TYPE",
+   "CODE_GENDER",
+   "FLAG_OWN_CAR",
+   "FLAG_OWN_REALTY",
+   "CNT_CHILDREN",
+   "AMT_INCOME_TOTAL",
+   "AMT_CREDIT",
+   "AMT_ANNUITY",
+   "AMT_GOODS_PRICE",
+   "NAME_TYPE_SUITE",
+   "NAME_INCOME_TYPE",
+   "NAME_EDUCATION_TYPE",
+   "NAME_FAMILY_STATUS",
+   "NAME_HOUSING_TYPE",
+   "REGION_POPULATION_RELATIVE",
+   "DAYS_BIRTH",
+   "DAYS_EMPLOYED",
+   "DAYS_REGISTRATION",
+   "DAYS_ID_PUBLISH",
+   "OWN_CAR_AGE",
+   "FLAG_MOBIL",
+   "FLAG_EMP_PHONE",
+   "FLAG_WORK_PHONE",
+   "FLAG_CONT_MOBILE",
+   "FLAG_PHONE",
+   "FLAG_EMAIL",
+   "OCCUPATION_TYPE",
+   "CNT_FAM_MEMBERS",
+   "REGION_RATING_CLIENT",
+   "REGION_RATING_CLIENT_W_CITY",
+   "WEEKDAY_APPR_PROCESS_START",
+   "HOUR_APPR_PROCESS_START",
+   "REG_REGION_NOT_LIVE_REGION",
+   "REG_REGION_NOT_WORK_REGION",
+   "LIVE_REGION_NOT_WORK_REGION",
+   "REG_CITY_NOT_LIVE_CITY",
+   "REG_CITY_NOT_WORK_CITY",
+   "LIVE_CITY_NOT_WORK_CITY",
+   "ORGANIZATION_TYPE",
+   "EXT_SOURCE_1",
+   "EXT_SOURCE_2",
+   "EXT_SOURCE_3",
+   "APARTMENTS_AVG",
+   "BASEMENTAREA_AVG",
+   "YEARS_BEGINEXPLUATATION_AVG",
+   "YEARS_BUILD_AVG",
+   "COMMONAREA_AVG",
+   "ELEVATORS_AVG",
+   "ENTRANCES_AVG",
+   "FLOORSMAX_AVG",
+   "FLOORSMIN_AVG",
+   "LANDAREA_AVG",
+   "LIVINGAPARTMENTS_AVG",
+   "LIVINGAREA_AVG",
+   "NONLIVINGAPARTMENTS_AVG",
+   "NONLIVINGAREA_AVG",
+   "APARTMENTS_MODE",
+   "BASEMENTAREA_MODE",
+   "YEARS_BEGINEXPLUATATION_MODE",
+   "YEARS_BUILD_MODE",
+   "COMMONAREA_MODE",
+   "ELEVATORS_MODE",
+   "ENTRANCES_MODE",
+   "FLOORSMAX_MODE",
+   "FLOORSMIN_MODE",
+   "LANDAREA_MODE",
+   "LIVINGAPARTMENTS_MODE",
+   "LIVINGAREA_MODE",
+   "NONLIVINGAPARTMENTS_MODE",
+   "NONLIVINGAREA_MODE",
+   "APARTMENTS_MEDI",
+   "BASEMENTAREA_MEDI",
+   "YEARS_BEGINEXPLUATATION_MEDI",
+   "YEARS_BUILD_MEDI",
+   "COMMONAREA_MEDI",
+   "ELEVATORS_MEDI",
+   "ENTRANCES_MEDI",
+   "FLOORSMAX_MEDI",
+   "FLOORSMIN_MEDI",
+   "LANDAREA_MEDI",
+   "LIVINGAPARTMENTS_MEDI",
+   "LIVINGAREA_MEDI",
+   "NONLIVINGAPARTMENTS_MEDI",
+   "NONLIVINGAREA_MEDI",
+   "FONDKAPREMONT_MODE",
+   "HOUSETYPE_MODE",
+   "TOTALAREA_MODE",
+   "WALLSMATERIAL_MODE",
+   "EMERGENCYSTATE_MODE",
+   "OBS_30_CNT_SOCIAL_CIRCLE",
+   "DEF_30_CNT_SOCIAL_CIRCLE",
+   "OBS_60_CNT_SOCIAL_CIRCLE",
+   "DEF_60_CNT_SOCIAL_CIRCLE",
+   "DAYS_LAST_PHONE_CHANGE",
+   "FLAG_DOCUMENT_2",
+   "FLAG_DOCUMENT_3",
+   "FLAG_DOCUMENT_4",
+   "FLAG_DOCUMENT_5",
+   "FLAG_DOCUMENT_6",
+   "FLAG_DOCUMENT_7",
+   "FLAG_DOCUMENT_8",
+   "FLAG_DOCUMENT_9",
+   "FLAG_DOCUMENT_10",
+   "FLAG_DOCUMENT_11",
+   "FLAG_DOCUMENT_12",
+   "FLAG_DOCUMENT_13",
+   "FLAG_DOCUMENT_14",
+   "FLAG_DOCUMENT_15",
+   "FLAG_DOCUMENT_16",
+   "FLAG_DOCUMENT_17",
+   "FLAG_DOCUMENT_18",
+   "FLAG_DOCUMENT_19",
+   "FLAG_DOCUMENT_20",
+   "FLAG_DOCUMENT_21",
+   "AMT_REQ_CREDIT_BUREAU_HOUR",
+   "AMT_REQ_CREDIT_BUREAU_DAY",
+   "AMT_REQ_CREDIT_BUREAU_WEEK",
+   "AMT_REQ_CREDIT_BUREAU_MON",
+   "AMT_REQ_CREDIT_BUREAU_QRT",
+   "AMT_REQ_CREDIT_BUREAU_YEAR"
+  ],
+  "trees": 502,
+  "trained_on": "home-credit-default-risk",
+  "n_dev": 246009,
+  "n_holdout": 61502,
+  "n_features": 308,
+  "profile_mix": {
+   "payment_difficulty": 60,
+   "no_difficulty": 240
+  },
+  "versions": {
+   "python": "3.13.18",
+   "lightgbm": "4.7.0",
+   "scikit-learn": "1.9.1",
+   "pandas": "3.0.5",
+   "numpy": "2.5.3",
+   "optbinning": "1.0.0"
+  }
+ },
+ "minutes": 17.0
+}
