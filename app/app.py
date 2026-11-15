@@ -134,7 +134,11 @@ with tab_dec:
         if out["decision"] != "APPROVE" and "counter_offers" in out:
             st.markdown("**Counter-offer:** largest amount with debt service ≤ 45% of income, re-scored by the model")
             if out["counter_offers"]:
-                co = pd.DataFrame(out["counter_offers"]).rename(columns={
+                co = pd.DataFrame(out["counter_offers"])
+                co["max_amount"] = co["max_amount"].map(lambda v: f"{v:,.0f}")
+                co["monthly"] = co["monthly"].map(lambda v: f"{v:,.0f}")
+                co["pd"] = co["pd"].map(lambda v: f"{v:.1%}")
+                co = co.rename(columns={
                     "months": "Term, months", "max_amount": "Max amount", "monthly": "Monthly payment",
                     "pd": "PD", "decision": "Decision"})
                 st.dataframe(co, hide_index=True, width="stretch")
